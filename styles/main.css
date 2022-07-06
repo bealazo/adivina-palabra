@@ -1,0 +1,171 @@
+body {
+  background-color: #FFDAB9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+
+body p {
+  color: #000;
+}
+
+body p#loser_msg {
+  display: none;
+}
+
+body p#winner_msg {
+  display: none;
+}
+
+body img#hang_img {
+  width: 30vw;
+  height: 55vh;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  body img#hang_img {
+    width: 80vw;
+    height: auto;
+  }
+}
+
+body input[type="text"] {
+  width: 180px;
+  padding: 3px 10px;
+  border: 1px solid #A0522D;
+  border-radius: 3px;
+  background-color: #FFDAB9;
+  margin: 8px 0;
+  display: inline-block;
+}
+
+body button {
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  background-color: #A0522D;
+  color: #fff;
+  -webkit-transition: background-color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+  border: 1px solid #A0522D;
+}
+
+body button:hover, body button :focus {
+  background-color: #FFDAB9;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+body button:active {
+  background-color: #FFDAB9;
+}
+
+body button#get_word {
+  width: 15vw;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  body button#get_word {
+    width: 50vw !important;
+  }
+}
+
+body div.header-styles {
+  width: 100vw;
+  height: 60vh;
+  background-image: url("../images/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -650px;
+  overflow: hidden;
+}
+
+body div.header-styles h1 {
+  color: #fff;
+  font-size: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  body div.header-styles h1 {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body div.header-styles {
+    background-position-y: 0px !important;
+  }
+}
+
+body div.button-get {
+  margin-top: 5rem;
+}
+
+body div.block-game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+@media only screen and (max-width: 768px) {
+  body div.block-game {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+}
+
+body div.h-input-button-group {
+  margin-top: 5rem;
+}
+
+body div.h-input-button-group p {
+  font-size: 30px;
+  color: #682b0e;
+  font-weight: bold;
+}
+
+body div.h-input-button-group p#loser_msg {
+  color: #FC180D;
+}
+
+body div.h-input-button-group p#winner_msg {
+  color: #46A405;
+}
+
+body div h3 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #682b0e;
+}
+
+body footer {
+  width: 100vw;
+  height: 20vh;
+  background-color: #A0522D;
+}
+
+body footer p {
+  color: #fff;
+  font-size: 25px;
+}
+/*# sourceMappingURL=main.css.map */
