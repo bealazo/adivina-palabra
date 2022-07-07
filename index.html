@@ -22,10 +22,12 @@
         <div class="h-input-button-group">
             <h3>Introduzca una letra por favor</h3>
             <div class="input-button-group">
-                <input type="text" maxlength="1" id="letter" placeholder="Escribe la letra">
-                <button id="evaluate">EVALUAR LETRA</button>
+                <input type="text" maxlength="1" id="letter" placeholder="Escribe la letra">                
+                <button id="evaluate" disabled>EVALUAR LETRA</button>
+                <p id="empty_input">Debe introducir una letra</p>
             </div>
        
+            <p id="wrong_letters"></p>
             <p id="word_underscores"></p>
             <p id="loser_msg">Has perdido</p>
             <p id="winner_msg">Has ganado</p>

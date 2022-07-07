@@ -18,6 +18,9 @@ body{
         &#winner_msg{
             display: none;
         }
+        &#empty_input{
+            display: none;
+        }
     }
     img{
         &#hang_img{
@@ -66,8 +69,7 @@ body{
                 width: 50vw!important;   
                              
           }
-          }
-
+          }          
         
     }
     div{
@@ -116,7 +118,12 @@ body{
                 &#winner_msg{
                     color:$color_green;
                 }
+                &#empty_input{
+                    color:$color_red;
+                    font-size: 15px;
+                }
               }
+              
           }
           h3{
             font-size: 25px;

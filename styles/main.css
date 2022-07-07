@@ -29,6 +29,10 @@ body p#winner_msg {
   display: none;
 }
 
+body p#empty_input {
+  display: none;
+}
+
 body img#hang_img {
   width: 30vw;
   height: 55vh;
@@ -150,6 +154,11 @@ body div.h-input-button-group p#loser_msg {
 
 body div.h-input-button-group p#winner_msg {
   color: #46A405;
+}
+
+body div.h-input-button-group p#empty_input {
+  color: #FC180D;
+  font-size: 15px;
 }
 
 body div h3 {
