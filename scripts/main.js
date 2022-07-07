@@ -1,11 +1,18 @@
-
 //variables
 const words=["casa", "perro", "gato", "elefante","hueso","abeja","pulga","rinoceronte","paloma","herramienta","mosquito"];
-let word="";
-let word_underscores="";
+const letter=document.querySelector("#letter");
+const button_get_word=document.querySelector("#get_word");
+const button_evaluate= document.querySelector("#evaluate");
+const winner_msg= document.querySelector("#winner_msg");
+const loser_msg= document.querySelector("#loser_msg");
 const full_year=new Date().getFullYear();
+const empty_input_msg=document.querySelector("#empty_input");
+let word="";
+let word_underscores=document.querySelector("#word_underscores");
+let hang_img=document.querySelector("#hang_img");
 let errors_count=1;
-let wrong_letters=[];
+let wrong_letters=document.querySelector("#wrong_letters");
+let copyright_year=document.querySelector("#copyright");
 
 //funciones
 const replaceAt=(word_underscores,index,letter)=>{
@@ -13,32 +20,30 @@ const replaceAt=(word_underscores,index,letter)=>{
 }
 
 const fullYearCopyright=()=>{
-    document.querySelector("#copyright").innerHTML+=full_year;
+    copyright_year.innerHTML+=full_year;
 }
 const getWord=()=>{   
     word=words[Math.floor(Math.random()*words.length)];
-    word_underscores=word.replace(/./g,"_ "); 
-    document.querySelector("#winner_msg").style.display="none";    
-    document.querySelector("#loser_msg").style.display="none";
-    document.querySelector("#hang_img").src="./images/1.png";
-    putWord();
-   
+    word_underscores.innerHTML=word.replace(/./g,"_ "); 
+    winner_msg.classList.add("visibility");    
+    loser_msg.classList.add("visibility"); 
+    hang_img.src="./images/1.png";
+     
 }
-const putWord=()=>{
-    document.querySelector("#word_underscores").innerHTML=word_underscores;
-}
-const finishGame=(loser_msg,winner_msg)=>{
+
+const finishGame=(loser,winner)=>{
     errors_count=1;
-    wrong_letters=[];
-    document.querySelector("#word_underscores").innerHTML="";
-    document.querySelector("#loser_msg").style.display=loser_msg;
-    document.querySelector("#winner_msg").style.display=winner_msg; 
-    document.querySelector("#evaluate").disabled=true;
-    putWrongLetters();
+    wrong_letters.innerHTML="";
+    word_underscores.innerHTML="";
+    if(loser){
+        loser_msg.classList.remove("visibility");
+    }
+    if(winner){
+        winner_msg.classList.remove("visibility"); 
+    }
+    button_evaluate.disabled=true;   
 }
-const putWrongLetters=()=>{
-    document.querySelector("#wrong_letters").innerHTML=wrong_letters;
-}
+
 
 //eventos
 window.onload = ()=>{
@@ -46,46 +51,41 @@ window.onload = ()=>{
    
   }
 
-document.querySelector("#get_word").addEventListener("click",()=>{
+button_get_word.addEventListener("click",()=>{
     getWord();
-    document.querySelector("#evaluate").disabled=false;
+    button_evaluate.disabled=false;
 })
 
-document.querySelector("#evaluate").addEventListener("click",()=>{
-     const letter=document.querySelector("#letter").value;
-     if(letter!==""){
-        document.querySelector("#empty_input").style.display="none";
+button_evaluate.addEventListener("click",()=>{
+     if(letter.value!==""){
+        empty_input_msg.classList.add("visibility")
             let letter_found=false;
             for (const i in word) {
-                if(letter===word[i]){
-                    console.log("entre al si")
+                if(letter.value.toLowerCase()===word[i]){
                     letter_found=true;
-                    word_underscores=replaceAt(word_underscores,i*2,letter);
-                    putWord();
+                    word_underscores.innerHTML=replaceAt(word_underscores.innerHTML,i*2,letter.value.toLowerCase());
                 }
             }
             if(!letter_found){        
                 if(errors_count<=7){
-                    document.querySelector("#hang_img").src="./images/"+(errors_count+1)+".png";
+                    hang_img.src="./images/"+(errors_count+1)+".png";
+                    wrong_letters.innerHTML+=letter.value.toLowerCase()+",";                         
                 
                 }  
                 if(errors_count==7){
-                finishGame("block","none");
-                }      
-            
-                errors_count++;
-                wrong_letters.push(letter+" ");
-                putWrongLetters();
+                    finishGame(true,false);
+                }                  
+                errors_count++;               
             }
             else{
-                if(word_underscores.indexOf("_")<0){           
-                    finishGame("none","block");         
+                if(word_underscores.innerHTML.indexOf("_")<0){           
+                    finishGame(false,true);         
                 }
             }
 
-            document.querySelector("#letter").value="";
+            letter.value="";
      }
      else {
-        document.querySelector("#empty_input").style.display="block";
+        empty_input_msg.classList.remove("visibility");
      }
 })

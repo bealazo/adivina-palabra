@@ -16,7 +16,8 @@
     </header>
     <main>
         <div class="button-get">
-            <button id="get_word">OBTENER PALABRA</button>
+            <h3>Una vez comenzado el juego podrá intentar adivinar la palabra</h3>
+            <button id="get_word">COMENZAR EL JUEGO</button>
         </div>
         <div class="block-game">
         <div class="h-input-button-group">
@@ -24,13 +25,13 @@
             <div class="input-button-group">
                 <input type="text" maxlength="1" id="letter" placeholder="Escribe la letra">                
                 <button id="evaluate" disabled>EVALUAR LETRA</button>
-                <p id="empty_input">Debe introducir una letra</p>
+                <p id="empty_input" class="visibility">Debe introducir una letra</p>
             </div>
        
             <p id="wrong_letters"></p>
             <p id="word_underscores"></p>
-            <p id="loser_msg">Has perdido</p>
-            <p id="winner_msg">Has ganado</p>
+            <p id="loser_msg" class="visibility">Has perdido</p>
+            <p id="winner_msg" class="visibility">Has ganado</p>
          </div>
          <div class="img-container">
             <img id="hang_img" src="./images/1.png"/>        

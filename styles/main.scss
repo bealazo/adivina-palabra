@@ -12,13 +12,7 @@ body{
     p{
         color:$color_black;
 
-        &#loser_msg{
-            display: none;
-        }
-        &#winner_msg{
-            display: none;
-        }
-        &#empty_input{
+        &.visibility{
             display: none;
         }
     }

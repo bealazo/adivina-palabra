@@ -21,15 +21,7 @@ body p {
   color: #000;
 }
 
-body p#loser_msg {
-  display: none;
-}
-
-body p#winner_msg {
-  display: none;
-}
-
-body p#empty_input {
+body p.visibility {
   display: none;
 }
 
