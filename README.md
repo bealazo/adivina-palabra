@@ -10,6 +10,10 @@ Para acceder a la página: https://bealazo.github.io/adivina-palabra/
 
 **Client:** Html, Sass, Javascript
 
+## Screenshots
+
+![App Screenshot](https://bealazo.github.io/portfolio/images/pic-16.png)
+
 ## Authors
 
 - [@bealazo](https://github.com/bealazo)
